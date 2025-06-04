@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/Container.css";
+import "../styles/ContainerScreen.css";
 
 const Container = () => {
     const twelveCards = [

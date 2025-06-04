@@ -1,0 +1,92 @@
+/* ===== Extra Small (Mobile) ===== */
+@media (max-width: 479px) {
+  /* Styles for very small mobile screens (e.g., older phones) */
+  .allCards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-rows: repeat(2, minmax(150px, 160px));
+    }
+
+    .simpleCard {
+        border: 2px solid green;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    #container {
+        border: 0;
+    }
+    .projectHeader {
+        border: 2px solid black;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        padding: 8px;
+        font-weight: 700;
+        font-family: 'Merriweather', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .infoSection {
+        width: 100%;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .scoreSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .cardTitle {
+        background-color: white;
+        padding: 2px;
+        width: 100%;
+        color: black;
+        font-size: 10px;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Merriweather', Arial, Helvetica, sans-serif;
+    }
+
+
+}
+
+/* ===== Small (Phones) ===== */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Styles for small phones */
+}
+
+/* ===== Medium (Tablets) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Styles for tablets (portrait & landscape) */
+}
+
+/* ===== Large (Laptops) ===== */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Styles for small to medium laptops */
+}
+
+/* ===== Extra Large (Desktops) ===== */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  /* Styles for large desktops */
+}
+
+/* ===== 2XL (Ultra-wide Screens) ===== */
+@media (min-width: 1536px) {
+  /* Styles for very large screens or 4K displays */
+}
