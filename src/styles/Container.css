@@ -63,9 +63,11 @@
 }
 
 .allCards {
+    overflow: auto;
+    /* resize: both; */
     display: grid;
-    grid-template-columns: 210px 210px 210px 210px 210px 210px;
-    grid-template-rows: 210px 210px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 210px);
     /* gap: 32px; */
 }
 
