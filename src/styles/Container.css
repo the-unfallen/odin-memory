@@ -1,0 +1,80 @@
+#container {
+    /* background: yellow; */
+    /* height: 100vh; */
+    border: 8px solid blue;
+}
+
+
+
+
+
+.projectHeader {
+    border: 4px solid black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.scoreSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    width: 30%;
+}
+
+.infoSection {
+    width: 70%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: 700;
+    font-family: 'Merriweather', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.simpleCard img {
+    width: 100%;
+    height: 75%;
+}
+
+.cardParent {
+    width: 100%;
+}
+
+
+.cardTitle {
+    /* bottom: 0;
+    position: absolute; */
+    background-color: white;
+    padding: 6px;
+    width: 100%;
+    color: black;
+    font-size: 12px;
+    height: 25%;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Merriweather', Arial, Helvetica, sans-serif;
+}
+
+.allCards {
+    display: grid;
+    grid-template-columns: 210px 210px 210px 210px 210px 210px;
+    grid-template-rows: 210px 210px;
+    /* gap: 32px; */
+}
+
+.simpleCard {
+    border: 4px solid green;
+    font-size: 48px;
+    color: blue;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    /*  */
+}
