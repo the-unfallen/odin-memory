@@ -1,5 +1,8 @@
 #container {
     border: 8px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -24,6 +27,7 @@
 }
 
 .infoSection {
+    padding-left: 12px;
     width: 70%;
     font-size: 24px;
     display: flex;
@@ -71,4 +75,8 @@
     display: flex;
     cursor: pointer;
     flex-direction: column;
+}
+
+.unclicked {
+    border: 6px solid red !important;
 }

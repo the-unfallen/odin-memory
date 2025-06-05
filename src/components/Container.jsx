@@ -96,6 +96,7 @@ const Container = () => {
     const query = "sport";
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
+    const [gameOver, setGameOver] = useState(false);
 
     const updateTwelveCards = (defaultCards, generatedGifs) => {
         const refGifs = [...generatedGifs];
@@ -115,7 +116,6 @@ const Container = () => {
             .then((res) => res.json())
             .then((data) => {
                 setGifs(data.data);
-                console.log(data.data);
             })
             .catch((err) => console.error("Giphy fetch error", err));
     }, [query]);
@@ -144,8 +144,25 @@ const Container = () => {
         return arr;
     }
 
+    const handleGameOver = () => {
+        setGameOver(true); // Step 1: show "Game Over" state
+
+        // Step 2: use timeout to delay reset
+        setTimeout(() => {
+            // Step 3: reset game state
+            setGameOver(false);
+            setScore(0);
+            if (score > bestScore) {
+                setBestScore(score);
+            }
+            
+            updateTwelveCards(twelveCards, gifs);
+            shuffleArray(twelveCards);
+            setCardOrder(twelveCards);
+        }, 3000);
+    };
+
     const handleCardClicked = (ref_id) => {
-        console.log({ twelveCards });
         let newCardOrder = [...cardOrder];
         let indexOfRefId;
         for (let i = 0; i < newCardOrder.length; i++) {
@@ -162,48 +179,45 @@ const Container = () => {
             shuffleArray(newCardOrder);
             setCardOrder(newCardOrder);
         } else {
-            // Score resets to 0
-            setScore(0);
-            if(score > bestScore){
-                setBestScore(score);
-            }
-            updateTwelveCards(twelveCards, gifs);
-            shuffleArray(twelveCards);
-            setCardOrder(twelveCards);
+            handleGameOver();
+           
         }
     };
 
+
     return (
-        <div id="container">
-            <Header 
-                currentScore={score}
-                bestScore={bestScore}
-            />
-            <div className="cardParent">
-                <Cards AllCards={cardOrder} handleCardClicked={handleCardClicked} />
+            <div id="container">
+                <Header currentScore={score} bestScore={bestScore} />
+                <div className="cardParent">
+                    <Cards
+                        AllCards={cardOrder}
+                        handleCardClicked={handleCardClicked}
+                        gameOver={gameOver}
+                    />
+                </div>
             </div>
-        </div>
-    );
+        );
+
+    
 };
 
-const Cards = ({ AllCards, handleCardClicked }) => {
+const Cards = ({ AllCards, handleCardClicked, gameOver }) => {
     return (
         <div className="allCards">
             {AllCards.map((this_card) => {
                 return (
                     <div
                         key={this_card.id}
-                        className="simpleCard"
+                        className={`simpleCard ${gameOver && !this_card.clicked ? "unclicked" : "" }`}
                         onClick={() => handleCardClicked(this_card.id)}
+                        disabled={gameOver}
                     >
                         <img
                             key={this_card.id}
                             src={this_card.source}
                             alt={this_card.title}
                         />
-                        <div className="cardTitle">
-                            {this_card.title}
-                        </div>
+                        <div className="cardTitle">{this_card.title}</div>
                     </div>
                 );
             })}
@@ -225,5 +239,7 @@ const Header = ({ currentScore, bestScore }) => {
         </div>
     );
 };
+
+
 
 export default Container;

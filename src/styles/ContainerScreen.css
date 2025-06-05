@@ -1,7 +1,8 @@
 /* ===== Extra Small (Mobile) ===== */
 @media (max-width: 479px) {
-  /* Styles for very small mobile screens (e.g., older phones) */
-  .allCards {
+
+    /* Styles for very small mobile screens (e.g., older phones) */
+    .allCards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-template-rows: repeat(2, minmax(150px, 160px));
@@ -18,6 +19,7 @@
     #container {
         border: 0;
     }
+
     .projectHeader {
         border: 2px solid black;
         width: 100%;
@@ -38,7 +40,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
     }
 
     .scoreSection {
@@ -68,25 +70,116 @@
 
 /* ===== Small (Phones) ===== */
 @media (min-width: 480px) and (max-width: 767px) {
-  /* Styles for small phones */
+
+    /* Styles for small phones */
+    .allCards {
+        display: grid;
+        grid-template-columns: repeat(3, clamp(155px, 33.3%, 270px));
+        grid-template-rows: repeat(4, minmax(150px, 180px));
+    }
+
+    .simpleCard {
+        border: 2px solid green;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    .infoSection {
+        padding-left: 8px;
+        width: 70%;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-family: 'Merriweather', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+
 }
 
 /* ===== Medium (Tablets) ===== */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Styles for tablets (portrait & landscape) */
+    /* Styles for tablets (portrait & landscape) */
+    .allCards {
+        display: grid;
+        grid-template-columns: repeat(4, clamp(180px, 25%, 256px));
+        grid-template-rows: repeat(3, minmax(150px, 180px));
+    }
+
+    .simpleCard {
+        border: 2px solid green;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    .infoSection {
+        padding-left: 8px;
+        width: 70%;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-family: 'Merriweather', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .scoreSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        width: 30%;
+    }
 }
 
 /* ===== Large (Laptops) ===== */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  /* Styles for small to medium laptops */
+    /* Styles for small to medium laptops */
+    .allCards {
+        display: grid;
+        grid-template-columns: repeat(6, clamp(168px, 16.6%, 213.1px));
+        grid-template-rows: repeat(2, minmax(180px, 200px));
+    }
+
+    .simpleCard {
+        border: 2px solid green;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        z-index: 999;
+    }
+
+    .infoSection {
+        padding-left: 8px;
+        width: 70%;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-family: 'Merriweather', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .scoreSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        width: 30%;
+    }
 }
 
 /* ===== Extra Large (Desktops) ===== */
 @media (min-width: 1280px) and (max-width: 1535px) {
-  /* Styles for large desktops */
+    /* Styles for large desktops */
 }
 
 /* ===== 2XL (Ultra-wide Screens) ===== */
 @media (min-width: 1536px) {
-  /* Styles for very large screens or 4K displays */
+    /* Styles for very large screens or 4K displays */
 }
